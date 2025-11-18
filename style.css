@@ -241,17 +241,17 @@ main {
     transition: 0.4s;
 }
 
-/* เปิด = เขียว KU */
 input:checked+.slider {
     background-color: var(--ku-green);
 }
 
-/* ปุ่มเลื่อน */
 input:checked+.slider:before {
     transform: translateX(26px);
 }
 
 /* ===================== RESPONSIVE ===================== */
+
+/* ---------- iPad Pro ---------- */
 @media(max-width: 1024px) {
     .row-equal {
         grid-template-columns: 1fr 1fr;
@@ -266,6 +266,7 @@ input:checked+.slider:before {
     }
 }
 
+/* ---------- iPad / Tablet ---------- */
 @media(max-width: 833px) {
     .row-equal {
         grid-template-columns: 1fr;
@@ -276,6 +277,7 @@ input:checked+.slider:before {
     }
 }
 
+/* ---------- Tablet 7" ---------- */
 @media(max-width: 767px) {
     .form-row {
         grid-template-columns: 1fr;
@@ -290,7 +292,9 @@ input:checked+.slider:before {
     }
 }
 
+/* ---------- Mobile L ---------- */
 @media(max-width: 599px) {
+
     body {
         font-size: 15px;
     }
@@ -308,9 +312,26 @@ input:checked+.slider:before {
     }
 }
 
+/* ---------- Mobile M (แก้ช่อง select ให้เล็กลง) ---------- */
 @media(max-width: 480px) {
-    body {
-        font-size: 14px;
+
+    .form-row {
+        grid-template-columns: 120px 1fr 50px;
+        gap: 6px;
+    }
+
+    .form-row label {
+        font-size: 0.85rem;
+    }
+
+    .form-row select {
+        padding: 0.45rem 0.6rem;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    .form-row span {
+        font-size: 0.85rem;
     }
 
     .fs-box {
@@ -322,17 +343,28 @@ input:checked+.slider:before {
     }
 }
 
+/* ---------- Mobile S ---------- */
 @media(max-width: 390px) {
+
+    .form-row {
+        grid-template-columns: 110px 1fr 45px;
+    }
+
+    .form-row select {
+        padding: 0.42rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .form-row label {
+        font-size: 0.8rem;
+    }
+
     .fs-box {
         font-size: 1.2rem;
     }
-
-    .form-row label,
-    .form-row select {
-        font-size: 0.82rem;
-    }
 }
 
+/* ---------- Very Small ---------- */
 @media(max-width: 340px) {
     .fs-box {
         font-size: 1rem;
